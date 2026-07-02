@@ -1,0 +1,99 @@
+/* =========================================================================
+   WEB-GTK: System Variable Theme Palettes & Base Application Engine Layer
+   ========================================================================= */
+
+:root, [data-theme="dark"] {
+  --window-bg-color: #242424;
+  --window-fg-color: #ffffff;
+  --header-bg-color: #303030;
+  --sidebar-bg-color: #2d2d2d;
+  --view-bg-color: #1e1e1e;
+  --card-bg-color: #2d2d2d;
+  --button-bg-color: #383838;
+  --button-hover-bg-color: #424242;
+  --button-active-bg-color: #4c4c4c;
+  --border-color: #1a1a1a;
+  --border-radius: 8px;
+  --font-stack: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --sidebar-width: 260px;
+  --accent-bg-color: #3584e4;
+  --accent-fg-color: #ffffff;
+
+  --switch-bg: #3e3e3e;
+  --switch-slider-bg: #e1e1e1;
+  --switch-shadow-color: rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="light"] {
+  --window-bg-color: #f6f6f6;
+  --window-fg-color: #2e3436;
+  --header-bg-color: #ffffff;
+  --sidebar-bg-color: #f1f1f1;
+  --view-bg-color: #ffffff;
+  --card-bg-color: #f9f9f9;
+  --button-bg-color: #eeeeee;
+  --button-hover-bg-color: #e4e4e4;
+  --button-active-bg-color: #d6d6d6;
+  --border-color: #e0e0e0;
+
+  --switch-bg: #e1e1e1;
+  --switch-slider-bg: #ffffff;
+  --switch-shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background-color: var(--window-bg-color);
+  color: var(--window-fg-color);
+  font-family: var(--font-stack);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.gtk-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background-color: var(--window-fg-color);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+
+.icon-menu {
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M2 3.75A.75.75 0 0 1 2.75 3h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 3.75Zm0 4.25A.75.75 0 0 1 2.75 7h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 8Zm0 4.25a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Z'/></svg>");
+  mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M2 3.75A.75.75 0 0 1 2.75 3h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 3.75Zm0 4.25A.75.75 0 0 1 2.75 7h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 8Zm0 4.25a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Z'/></svg>");
+}
+
+.icon-sidebar {
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M1.75 2.5h12.5c.966 0 1.75.784 1.75 1.75v7.5A1.75 1.75 0 0 1 14.25 13.5H1.75A1.75 1.75 0 0 1 0 11.75v-7.5C0 3.284.784 2.5 1.75 2.5Zm0 1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h3.5V4H1.75Zm5 9h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-7.5v8Z'/></svg>");
+  mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M1.75 2.5h12.5c.966 0 1.75.784 1.75 1.75v7.5A1.75 1.75 0 0 1 14.25 13.5H1.75A1.75 1.75 0 0 1 0 11.75v-7.5C0 3.284.784 2.5 1.75 2.5Zm0 1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h3.5V4H1.75Zm5 9h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-7.5v8Z'/></svg>");
+}
+
+.icon-bullet {
+  margin-right: 10px;
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><circle cx='8' cy='8' r='3'/></svg>");
+  mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><circle cx='8' cy='8' r='3'/></svg>");
+}
+
+.gtk-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  user-select: none;
+}
+.gtk-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}

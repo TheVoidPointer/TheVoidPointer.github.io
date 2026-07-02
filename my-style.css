@@ -1,0 +1,753 @@
+/* =========================================================================
+   MY-STYLE: Structural Design, Animations & Layout Modifiers
+   ========================================================================= */
+
+
+
+
+/* ... Keep all your remaining layout and theme rules below unchanged ... */
+
+/* Portfolio Section Routing Layout System */
+.portfolio-section {
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.portfolio-section.hidden-section {
+  display: none !important;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section-hero {
+  padding: 12px 0 4px 0;
+}
+
+.section-hero h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+}
+
+.subtitle-text {
+  font-size: 15px;
+  opacity: 0.7;
+  margin: 0;
+}
+
+/* Structural Grids & Card Flex Rules */
+.tech-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tech-category {
+  font-size: 14px;
+}
+
+.card-header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.card-header-flex h3 {
+  margin: 0;
+}
+
+.badge {
+  background-color: var(--accent-bg-color);
+  color: var(--accent-fg-color);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
+.workspace-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+/* Baseline Restructured Container Configurations */
+.gtk-header-bar {
+  background-color: var(--header-bg-color);
+  border-bottom: 1px solid var(--border-color);
+  height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  user-select: none;
+  z-index: 100;
+}
+
+.left-pane-header {
+  width: var(--sidebar-width);
+  height: 100%;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-right: 1px solid var(--border-color);
+  flex-shrink: 0;
+  transition: width 0.25s cubic-bezier(0.25, 1, 0.5, 1), padding 0.25s ease, border-right 0.25s ease;
+}
+
+.right-pane-header {
+  flex: 1;
+  height: 100%;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.gtk-title {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--window-fg-color);
+  white-space: nowrap;
+}
+
+.gtk-window-content {
+  display: flex;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  height: calc(100vh - 48px);
+}
+
+.gtk-sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--sidebar-bg-color);
+  border-right: 1px solid var(--border-color);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), margin-left 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  position: relative;
+  flex-shrink: 0;
+  z-index: 50;
+}
+
+.gtk-nav-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.gtk-sidebar.hidden {
+  margin-left: calc(-1 * var(--sidebar-width));
+}
+
+.gtk-sidebar.hidden ~ .gtk-header-bar .left-pane-header,
+body:has(.gtk-sidebar.hidden) .left-pane-header {
+  width: 56px;
+  border-right: 1px solid transparent;
+}
+
+.gtk-main-view {
+  flex: 1;
+  background-color: var(--view-bg-color);
+  padding: 24px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.gtk-btn {
+  background-color: var(--button-bg-color);
+  color: var(--window-fg-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease;
+  flex-shrink: 0;
+}
+.gtk-btn:hover { background-color: var(--button-hover-bg-color); }
+.gtk-btn:active { background-color: var(--button-active-bg-color); }
+
+.gtk-btn.text-btn {
+  width: auto;
+  padding: 0 14px;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.gtk-nav-link {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  color: var(--window-fg-color);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.1s ease;
+}
+.gtk-nav-link:hover { background-color: var(--button-hover-bg-color); }
+.gtk-nav-link.active {
+  background-color: var(--accent-bg-color);
+  color: var(--accent-fg-color);
+}
+.gtk-nav-link.active .gtk-icon {
+  background-color: var(--accent-fg-color);
+}
+
+.my-custom-card {
+  background-color: var(--card-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin-top: 16px;
+  /* max-width: 680px; */
+}
+.my-custom-card h3 { margin-top: 0; margin-bottom: 8px; }
+.my-custom-card p { margin: 0 0 8px 0; font-size: 14px; line-height: 1.5; opacity: 0.9; }
+.my-custom-card p:last-child { margin-bottom: 0; }
+
+.my-custom-card blockquote {
+  border-left: 4px solid var(--accent-bg-color);
+  margin: 12px 0 0 0;
+  padding-left: 12px;
+  color: var(--window-fg-color);
+  opacity: 0.85;
+  font-size: 13.5px;
+}
+
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.switch-label-text {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--window-fg-color);
+  opacity: 0.7;
+  user-select: none;
+}
+
+.gtk-switch-track {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: var(--switch-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 14px; 
+  transition: background-color 0.15s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gtk-switch-track::after {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 2px;
+  bottom: 2px;
+  background-color: var(--switch-slider-bg);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px var(--switch-shadow-color);
+  transition: transform 0.15s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gtk-switch input:checked + .gtk-switch-track {
+  background-color: var(--accent-bg-color);
+  border-color: transparent;
+}
+.gtk-switch input:checked + .gtk-switch-track::after {
+  transform: translateX(20px);
+}
+
+@media (max-width: 768px) {
+  .left-pane-header { 
+    width: auto; 
+    border-right: none; 
+  }
+  .gtk-sidebar {
+    position: absolute;
+    left: 0; 
+    top: 0; 
+    bottom: 0;
+    margin-left: 0 !important;
+    transform: translateX(-100%); 
+    box-shadow: 4px 0 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .gtk-sidebar.active-mobile { 
+    transform: translateX(0); 
+  }
+}
+
+
+/* Ensure variables match cleanly with your current GTK layout engine rules */
+:root {
+  --accent-bg-color: #3584e4;
+  --border-color: #1a1a1a;
+  --border-radius: 8px;
+}
+
+/* =========================================================================
+   Action Button Row Setup
+   ========================================================================= */
+.gtk-action-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+  width: 100%;
+}
+
+.gtk-btn.text-btn.graphic-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 38px;
+  font-size: 13.5px;
+  font-weight: 500;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  background-color: var(--button-bg-color);
+  color: var(--window-fg-color);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  width: 100%;
+}
+
+.gtk-btn.text-btn.graphic-btn:hover {
+  background-color: var(--button-hover-bg-color);
+}
+
+.gtk-btn.text-btn.graphic-btn:active {
+  background-color: var(--button-active-bg-color);
+}
+
+.btn-svg-icon {
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+
+/* =========================================================================
+   GTK Project Grid & Interactive Banner Adjustments
+   ========================================================================= */
+
+.gtk-section-title-group {
+  margin-bottom: 8px;
+}
+
+.gtk-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 8px;
+}
+
+.my-custom-card.project-card-layout {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-banner-wrapper {
+  width: 100%;
+  height: 210px;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid var(--border-color);
+  background-color: #0b111e; /* Matching darkness matching image_7cb0e0.png */
+}
+
+/* Image cropping rules to seamlessly split image_7cb0e0.png across cards */
+.project-banner-img {
+  
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.project-banner-img.left-crop {
+  width: 195%;
+  left: -2%;
+}
+
+.project-banner-img.right-crop {
+  width: 195%;
+  right: -5%;
+}
+
+.project-card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-card-content h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.project-card-content p {
+  font-size: 13.5px;
+  line-height: 1.6;
+  opacity: 0.8;
+  margin-bottom: auto; /* Pushes the badge row down evenly */
+}
+
+.project-badge-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 16px 0;
+}
+
+/* Styling native GTK Pill tags matching image_7cb0e0.png design */
+.project-badge-group .badge {
+  background-color: var(--button-bg-color);
+  color: var(--window-fg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 4px 10px;
+  font-size: 11.5px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+/* Custom themed outline utility links */
+.gtk-btn.text-btn.outline-action {
+  border: 1px solid var(--accent-bg-color);
+  color: var(--accent-bg-color);
+  background: transparent;
+  padding: 0 16px;
+  height: 32px;
+}
+
+.gtk-btn.text-btn.outline-action:hover {
+  background-color: rgba(53, 132, 228, 0.1);
+}
+
+.gtk-btn.text-btn.outline-action.active-action {
+  background-color: var(--accent-bg-color);
+  color: var(--accent-fg-color);
+}
+
+.gtk-btn.text-btn.outline-action.active-action:hover {
+  opacity: 0.9;
+}
+
+/* Responsive Overrides */
+@media (max-width: 1100px) {
+  .gtk-projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .project-banner-wrapper {
+    height: 240px;
+  }
+  .project-banner-img.left-crop,
+  .project-banner-img.right-crop {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    object-position: center center;
+  }
+}
+
+
+
+/* =========================================================================
+   GTK Project Grid - Full Image Scaling Adjustments
+   ========================================================================= */
+
+.project-banner-wrapper {
+  width: 100%;
+  height: 220px; /* Base frame container size */
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid var(--border-color);
+  background-color: #0b111e; /* Dark fallback background matches the image aesthetic */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Shows the full image cleanly without any cropping */
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Reset previous layout splitting offsets to guarantee zero-boundary distortion */
+
+
+
+
+/* Responsive Overrides for smaller displays */
+@media (max-width: 768px) {
+  .project-banner-wrapper {
+    height: 180px; /* Slightly shorter frame context for mobile viewports */
+  }
+}
+
+
+
+/* =========================================================================
+   GTK Preferences List Box & Row Layouts
+   ========================================================================= */
+
+.gtk-list-box {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  margin-top: 16px;
+  width: 100%;
+}
+
+.gtk-list-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+  min-height: 58px;
+}
+
+.gtk-list-row:last-child {
+  border-bottom: none;
+}
+
+.row-leading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.row-svg-icon {
+  flex-shrink: 0;
+  opacity: 0.95;
+}
+
+/* Custom platform accent tints */
+.row-svg-icon.telegram-blue {
+  color: #24A1DE;
+}
+
+.row-svg-icon.youtube-red {
+  color: #FF0000;
+}
+
+.row-svg-icon.email-green {
+  color: #2ec27e;
+}
+
+.row-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.row-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--window-fg-color);
+}
+
+.row-subtitle {
+  font-size: 12.5px;
+  color: var(--window-fg-color);
+  opacity: 0.6;
+}
+
+/* Compact specific row buttons */
+.gtk-btn.text-btn.compact-action-btn {
+  height: 28px;
+  padding: 0 14px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background-color: var(--button-bg-color);
+  color: var(--window-fg-color);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.1s ease;
+}
+
+.gtk-btn.text-btn.compact-action-btn:hover {
+  background-color: var(--button-hover-bg-color);
+}
+
+/* Responsive optimization for extremely tight screen widths */
+@media (max-width: 480px) {
+  .gtk-list-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px;
+  }
+  .gtk-btn.text-btn.compact-action-btn {
+    width: 100%;
+    height: 32px;
+  }
+}
+
+
+/* Custom info labels and tags within rows */
+.gtk-status-label {
+  font-size: 13px;
+  opacity: 0.5;
+  font-weight: 500;
+  padding-right: 4px;
+}
+
+.gtk-status-badge {
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+}
+
+.gtk-status-badge.success-glow {
+  background-color: rgba(46, 194, 126, 0.15);
+  color: #2ec27e;
+  border-color: rgba(46, 194, 126, 0.3);
+}
+
+/* Colors for the leading row icons */
+.row-svg-icon.accent-blue {
+  color: var(--accent-bg-color);
+}
+
+.row-svg-icon.location-orange {
+  color: #e66100;
+}
+
+.row-svg-icon.availability-green {
+  color: #2ec27e;
+}
+
+@media (max-width: 480px) {
+  .gtk-status-label, .gtk-status-badge {
+    margin-top: 4px;
+    padding-left: 0;
+  }
+}
+
+
+/* =========================================================================
+   GTK Window Form Components & Entry Configurations
+   ========================================================================= */
+
+.gtk-form-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background-color: var(--card-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin-top: 14px;
+  width: 100%;
+}
+
+.gtk-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.gtk-input-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--window-fg-color);
+  opacity: 0.75;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Native styling for structural text entry boxes */
+.gtk-entry, .gtk-text-view {
+  width: 100%;
+  background-color: var(--view-bg-color);
+  color: var(--window-fg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-family: var(--font-stack);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.gtk-text-view {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Focused system accent boundaries */
+.gtk-entry:focus, .gtk-text-view:focus {
+  border-color: var(--accent-bg-color);
+  box-shadow: 0 0 0 2px rgba(53, 132, 228, 0.25);
+}
+
+.gtk-btn.text-btn.form-submit-btn {
+  background-color: var(--accent-bg-color);
+  color: var(--accent-fg-color);
+  border: 1px solid transparent;
+  height: 38px;
+  font-size: 13.5px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  padding: 0 20px;
+  cursor: pointer;
+  margin-top: 4px;
+  width: auto;
+}
+
+.gtk-btn.text-btn.form-submit-btn:hover {
+  opacity: 0.95;
+  background-color: var(--accent-bg-color);
+}
+
+@media (max-width: 480px) {
+  .gtk-btn.text-btn.form-submit-btn {
+    width: 100%;
+  }
+}
+
+
+
