@@ -8,6 +8,11 @@
 /* ... Keep all your remaining layout and theme rules below unchanged ... */
 
 /* Portfolio Section Routing Layout System */
+
+
+
+
+
 .portfolio-section {
   display: flex;
   flex-direction: column;
@@ -96,7 +101,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  border-right: 1px solid var(--border-color);
+  /* border-right: 1px solid var(--border-color); */
   flex-shrink: 0;
   transition: width 0.25s cubic-bezier(0.25, 1, 0.5, 1), padding 0.25s ease, border-right 0.25s ease;
 }
@@ -165,6 +170,20 @@ body:has(.gtk-sidebar.hidden) .left-pane-header {
 
 .gtk-btn {
   background-color: var(--button-bg-color);
+  color: var(--window-fg-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+.gtk-btn-h {
+  background-color: transparent;
   color: var(--window-fg-color);
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
@@ -323,7 +342,7 @@ body:has(.gtk-sidebar.hidden) .left-pane-header {
   border-radius: var(--border-radius);
   border: 1px solid var(--border-color);
   background-color: var(--button-bg-color);
-  color: var(--window-fg-color);
+  color: white;
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.15s ease;
@@ -424,7 +443,7 @@ body:has(.gtk-sidebar.hidden) .left-pane-header {
 /* Styling native GTK Pill tags matching image_7cb0e0.png design */
 .project-badge-group .badge {
   background-color: var(--button-bg-color);
-  color: var(--window-fg-color);
+  color: white;
   border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 4px 10px;
@@ -436,8 +455,8 @@ body:has(.gtk-sidebar.hidden) .left-pane-header {
 /* Custom themed outline utility links */
 .gtk-btn.text-btn.outline-action {
   border: 1px solid var(--accent-bg-color);
-  color: var(--accent-bg-color);
-  background: transparent;
+  color: white;
+  background: var(--button-bg-color);
   padding: 0 16px;
   height: 32px;
 }
@@ -595,7 +614,7 @@ body:has(.gtk-sidebar.hidden) .left-pane-header {
   border-radius: 6px;
   border: 1px solid var(--border-color);
   background-color: var(--button-bg-color);
-  color: var(--window-fg-color);
+  color: white;
   text-decoration: none;
   display: inline-flex;
   align-items: center;

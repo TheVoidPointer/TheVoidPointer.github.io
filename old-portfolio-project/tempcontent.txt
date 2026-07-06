@@ -1,0 +1,23 @@
+## Project FUXK
+title: Task Management App
+description: Collaborative task management tool with real-time updates.
+technologies: [Vue.js, Firebase, Tailwind, Socket.io]
+image: assets/images/projects/taskmanager.jpg
+link: https://taskmanager.example.com
+github: https://github.com/johndoe/taskmanager
+
+## Project 3
+title: Portfolio Website
+description: Responsive portfolio with dark mode and animations.
+technologies: [HTML/CSS, JavaScript, GSAP, Webpack]
+image: assets/images/projects/portfolio.jpg
+link: https://portfolio.example.com
+github: https://github.com/johndoe/portfolio
+
+## Project 4
+title: Weather Dashboard
+description: Real-time weather dashboard with location-based forecasts.
+technologies: [React, API, Chart.js, Geolocation]
+image: assets/images/projects/weather.jpg
+link: https://weather.example.com
+github: https://github.com/johndoe/weather-dashboard

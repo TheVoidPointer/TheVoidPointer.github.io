@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Welcome In My Realm</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+</head>
+
+<body class="portfolio-theme">
+    <!-- Header -->
+    <header class="portfolio-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <img id="header-logo" src="assets/images/logo.svg" alt="Logo" width="30" height="30">
+                    <span class="brand-name" id="site-name">Krupal.Dev</span>
+                </a>
+                
+                <nav class="main-nav">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <button class="theme-toggle" aria-label="Toggle theme">
+                        <i data-lucide="sun-moon"></i>
+                    </button>
+                    <a href="#contact" class="btn-primary">Get in Touch</a>
+                    <button class="mobile-menu-btn" aria-label="Toggle menu">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" aria-hidden="true">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1 id="hero-title">I'm a <span class="highlight">Developer</span> & <span class="highlight">Designer</span></h1>
+
+                    <div class="feature-grid" id="features-container">
+                        <!-- Features loaded dynamically -->
+                    </div>
+
+                    <p class="hero-description" id="hero-description">
+                        Passionate about creating beautiful, functional websites and applications.
+                        I focus on clean code, user experience, and modern design principles.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn-primary">View Projects</a>
+                        <a href="#contact" class="btn-secondary">Contact Me</a>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <img id="hero-illustration" src="assets/images/developer-illustration.svg" alt="Developer Illustration">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="about-title">About Me</h2>
+                <p id="about-subtitle">Get to know me better</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-image">
+                    <img id="profile-image" src="assets/images/profile-image.jpg" alt="Profile Picture">
+                </div>
+
+                <div class="about-text">
+                    <h3 id="about-content">Hello, I'm <span class="highlight">Katariya Kripal</span></h3>
+                    <p id="about-description">
+                        I'm a passionate developer with experience in building modern web applications.
+                        I love solving problems and creating solutions that make people's lives easier.
+                    </p>
+
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <strong>Name:</strong> <span id="detail-name">Katariya Kripal</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Email:</strong> <span id="detail-email">Krupal.devloper@gmail.com</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Location:</strong> <span id="detail-location">Rajkot, Gujrat</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Availability:</strong> <span id="detail-availability">Open to work</span>
+                        </div>
+                    </div>
+
+                    <div class="social-links" id="social-links">
+                        <!-- Social links loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="projects-title">My Projects</h2>
+                <p id="projects-subtitle">Some of my recent work</p>
+            </div>
+
+            <div class="projects-grid" id="projects-container">
+                <!-- Projects loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section" id="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="skills-title">My Skills</h2>
+                <p id="skills-subtitle">Technologies I work with</p>
+            </div>
+
+            <div class="skills-grid" id="skills-container">
+                <!-- Skills loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="contact-title">Get In Touch</h2>
+                <p id="contact-subtitle">Let's work together</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <i data-lucide="mail"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p id="contact-email">krupal.devloper@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i data-lucide="phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p id="contact-phone">+91 94081 39706</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i data-lucide="map-pin"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p id="contact-location">Rajkot, Gujrat</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="41d14752-af39-403b-a6c3-b7d79c4a6cd0">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="portfolio-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img id="footer-logo" src="assets/images/logo.svg" alt="Logo">
+                    <h3 id="footer-name">Krupal.Dev</h3>
+                    <p id="footer-tagline">Developer & Designer</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Quick Links</h4>
+                        <a href="#home">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#projects">Projects</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Resources</h4>
+                        <a href="#skills">Skills</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Connect With Me</h4>
+                    <div class="social-icons" id="footer-social-links">
+                        <!-- Social icons loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p id="copyright">&copy; 2026 Krupal.dev. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Background Elements -->
+    <div class="bg-grid"></div>
+    <div class="bg-grid-reverse"></div>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

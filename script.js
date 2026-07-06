@@ -132,7 +132,7 @@ for (let i = 0; i < pointCount; i++) {
 geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
 const particleMaterial = new THREE.PointsMaterial({
-  size: 0.7,
+  size: 1,
   transparent: true,
   blending: THREE.AdditiveBlending,
   depthWrite: false,
@@ -175,13 +175,13 @@ function handleResponsiveScaling() {
 
   if (window.innerWidth <= 480) {
     textSprite.scale.set(11.0, 2.75, 1);
-    camera.position.z = 28;
+    camera.position.z = 22;
   } else if (window.innerWidth <= 768) {
     textSprite.scale.set(12.0, 3.0, 1);
-    camera.position.z = 24;
+    camera.position.z = 20;
   } else if (window.innerWidth <= 1200) {
     textSprite.scale.set(13.0, 3.25, 1);
-    camera.position.z = 21;
+    camera.position.z = 19;
   } else {
     textSprite.scale.set(14.0, 3.5, 1);
     camera.position.z = 19;
