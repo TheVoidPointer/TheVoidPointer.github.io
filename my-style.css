@@ -129,7 +129,7 @@
 .gtk-sidebar {
   width: var(--sidebar-width);
   background-color: var(--sidebar-bg-color);
-  border-right: 1px solid var(--border-color);
+  /* border-right: 1px solid var(--border-color); */
   padding: 10px;
   display: flex;
   flex-direction: column;
